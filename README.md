@@ -1,2 +1,2 @@
 # sim_klinik
-coba
+projek sim klinik Gamatechno
