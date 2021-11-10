@@ -10,7 +10,6 @@
             <th style="width: 15%;">Nama Member</th>
             <th style="width: 15%;">Keterangan</th>
             <th style="width: 15%;">Status</th>
-            <th style="width: 15%;">Waktu</th>
         </tr>
     </thead>
     <tbody id="table-data">
@@ -21,14 +20,22 @@
                         <center><?= $noPage++; ?></center>
                     </td>
                     <td>
-                        <button id="btn_assessement" type="button" class="btn btn-xs btn-success"><i class="px-navbar-icon fa fa-plus"></i></button>
-                        <button id="delete-obat" type="button" class="btn btn-xs btn-danger"><i class="px-navbar-icon fa fa-trash"></i></button>
+                        <a data-id="<?= $rs->id; ?>" id="btn_assessment" type="button" class="btn btn-xs btn-success"><i class="px-navbar-icon fa fa-plus"></i></a>
+                        <a id="delete-data" data-id="<?= $rs->id; ?>" nama-member="<?= $rs->nama_member; ?>" type="button" class="btn btn-xs btn-danger"><i class="px-navbar-icon fa fa-trash"></i></a>
                         <!-- <button type="button" class="btn btn-xs btn-warning"><i class="px-navbar-icon fa fa-dollar"></i></button> -->
                     </td>
                     <td><?= $rs->id; ?></td>
                     <td><?= $rs->tanggal; ?></td>
                     <td><?= $rs->jam; ?></td>
                     <td><?= $rs->nama_member; ?></td>
+                    <td></td>
+                    <td>
+                        <?php if ($rs->status_member == 'Ya') { ?>
+                            Sudah di Data
+                        <?php } else { ?>
+                            Belum di Data
+                        <?php } ?>
+                    </td>
                     
                 </tr>
             <?php }

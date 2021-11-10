@@ -13,14 +13,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                    <input name="tanggal_from" type="text" class="form-control" placeholder="Awal" onfocus="(this.type='date')" />
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input name="tanggal_from" type="text" class="form-control" placeholder="From" onfocus="(this.type='date')" />
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                    <input name="tanggal_to" type="text" class="form-control" placeholder="Akhir" onfocus="(this.type='date')" />
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input name="tanggal_to" type="text" class="form-control" placeholder="To" onfocus="(this.type='date')" />
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -30,8 +30,11 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Tipe</label>
                         <div class="form-group col-md-9">
-                            <select class="form-control">
-                                
+                            <select class="form-control select2" name="tipe">
+                                    <option value="">--Semua Tipe Member--</option>
+                                    <?php foreach ($tipe as $key => $val) : ?>
+                                        <option value="<?php echo $val->tmf_id; ?>"><?php echo $val->tmf_nama ?></option>
+                                    <?php endforeach ?>
                             </select>
                         </div>
                     </div>
@@ -39,8 +42,10 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Status</label>
                         <div class="form-group col-md-9">
-                            <select class="form-control">
-                                
+                            <select class="form-control select2" name="status">
+                                    <option value="">--Semua Status--</option>
+                                    <option value="Ya">Sudah di Data</option>
+                                    <option value="Tidak">Belum di Data</option>
                             </select>
                         </div>
                     </div>
@@ -48,7 +53,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama</label>
                         <div class="col-md-9  m-b-1">
-                            <input type="text" name="nama_vendor" class="form-control" placeholder="Nama">
+                            <input type="text" name="nama_member" class="form-control" placeholder="Nama">
                         </div>
                     </div>
 

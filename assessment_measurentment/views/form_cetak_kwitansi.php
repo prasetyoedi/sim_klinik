@@ -48,31 +48,33 @@
 		</table>
 		<hr style="width: 99%; text-align: center; border: 1px solid black;margin-bottom: 0px">
 		<table class="text-left" cellpadding="10" style="margin-bottom: -15px;">
-			<tr>
-				<td style="font-size:11pt;">No. Kwitansi</td>
-				<td style="font-size:11pt;">:</td>
-				<td style="font-size:11pt;"></td>
-			</tr>
-            <tr>
-                <td style="font-size:11pt;">Jenis Program</td>
-				<td style="font-size:11pt;">:</td>
-				<td style="font-size:11pt;"></td> 
-            </tr>
-			<tr>
-				<td style="font-size:11pt;">Tgl. Kwitansi</td>
-				<td style="font-size:11pt;">:</td>
-				<td style="font-size:11pt;"></td>
-			</tr>
-			<tr>
-				<td style="font-size:11pt;">Nama </td>
-				<td style="font-size:11pt;">:</td>
-				<td style="font-size:11pt;"></td>
-				
-			</tr>
+			<?php foreach ($listBilling as $key => $val) : ?>
+				<tr>
+					<td style="font-size:11pt; padding: 2px;">No. Kwitansi</td>
+					<td style="font-size:11pt; padding: 2px;">:</td>
+					<td style="font-size:11pt; padding: 2px;"><?php echo $val->fitmemberbill_inv_number; ?></td>
+				</tr>
+				<tr>
+					<td style="font-size:11pt; padding: 2px;">Jenis Program</td>
+					<td style="font-size:11pt; padding: 2px;">:</td>
+					<td style="font-size:11pt; padding: 2px;"><?php echo $val->fitproglat_name; ?></td> 
+				</tr>
+				<tr>
+					<td style="font-size:11pt; padding: 2px;">Tgl. Kwitansi</td>
+					<td style="font-size:11pt; padding: 2px;">:</td>
+					<td style="font-size:11pt; padding: 2px;"><?php echo date('d-m-Y', strtotime($val->created_on)) ?></td>
+				</tr>
+				<tr>
+					<td style="font-size:11pt; padding: 2px;">Nama </td>
+					<td style="font-size:11pt; padding: 2px;">:</td>
+					<td style="font-size:11pt; padding: 2px;"><?php echo $val->nama; ?></td>
+					
+				</tr>
+			<?php endforeach ?>
 		</table>
 		<hr style="width: 99%; text-align: center; border: 1px solid black;margin-bottom: 5px;">
 
-        <table class="text-left" width="100%" cellpadding="10" style="margin-bottom: -15px;">
+        <!-- <table class="text-left" width="100%" cellpadding="10" style="margin-bottom: -15px;">
 			<tr>
 				<td style="width: 70%;font-size:11pt;padding-bottom: 2px;">Biaya Pendaftaran</td>
 				<td style="width: 30%;font-size:11pt;padding-bottom: 2px;" class="text-right">
@@ -121,9 +123,9 @@
 					Rp. 
 				</td>
 			</tr>
-        </table>
-        <hr style="width: 99%; text-align: center; border: 1px solid black;margin-bottom: 5px;">
-        <table class="text-left" width="100%" cellpadding="10" style="margin-bottom: -15px;">
+        </table> -->
+        <!-- <hr style="width: 99%; text-align: center; border: 1px solid black;margin-bottom: 5px;"> -->
+        <!-- <table class="text-left" width="100%" cellpadding="10" style="margin-bottom: -15px;">
 			<tr>
 				<td style="text-align: left;font-size:11pt;">Paraf </td>
 
@@ -142,7 +144,7 @@
 
 				<td style="font-size:11pt;text-align: right;">Rp. </td>
 			</tr>
-        </table>
+        </table> -->
         <div align="center" style="margin-top: 5%;font-size:11pt;margin-top: 15px;">
 			<p style="font-size: 11pt;margin-bottom: -5px;">
 				***Terima Kasih***

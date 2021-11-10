@@ -21,15 +21,22 @@
                         <center><?= $noPage++; ?></center>
                     </td>
                     <td>
-                        <!-- <button nama-vendor="<?= $rs->nama_member; ?>" id="edit-obat" data-id="<?= $rs->id; ?>" type="button" class="btn btn-xs btn-success"><i class="px-navbar-icon fa fa-pencil"></i></button> -->
-                        <button data-id="<?= $rs->id; ?>" id="btn_assessment" type="button" class="btn btn-xs btn-success"><i class="px-navbar-icon fa fa-plus"></i></button>
-                        <button id="delete-obat" data-id="<?= $rs->id; ?>" nama-vendor="<?= $rs->nama_member; ?>" type="button" class="btn btn-xs btn-danger"><i class="px-navbar-icon fa fa-trash"></i></button>
-                        <button type="button" class="btn btn-xs btn-warning"><i class="px-navbar-icon fa fa-dollar"></i></button>
+                        <a data-id="<?= $rs->id; ?>" id="btn_assessment" type="button" class="btn btn-xs btn-success"><i class="px-navbar-icon fa fa-plus"></i></a>
+                        <a id="delete-data" data-id="<?= $rs->id; ?>" nama-member="<?= $rs->nama_member; ?>" type="button" class="btn btn-xs btn-danger"><i class="px-navbar-icon fa fa-trash"></i></a>
+                        <!-- <button type="button" class="btn btn-xs btn-warning"><i class="px-navbar-icon fa fa-dollar"></i></button> -->
                     </td>
                     <td><?= $rs->id; ?></td>
                     <td><?= $rs->tanggal; ?></td>
                     <td><?= $rs->jam; ?></td>
                     <td><?= $rs->nama_member; ?></td>
+                    <td></td>
+                    <td>
+                        <?php if ($rs->status_member == 'Ya') { ?>
+                            Sudah di Data
+                        <?php } else { ?>
+                            Belum di Data
+                        <?php } ?>
+                    </td>
                     
                 </tr>
             <?php }
